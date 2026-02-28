@@ -1,2 +1,2 @@
 # FLDP
-Implement Federated Learning over Confidential Data
+Implementing Federated Learning over Confidential Data
