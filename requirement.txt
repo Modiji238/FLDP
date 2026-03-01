@@ -1,0 +1,6 @@
+tensorflow==2.15.0
+flwr==1.26.1
+tensorflow-privacy==0.9.0
+numpy==1.26.4
+protobuf==6.33.5
+grpcio==1.78.0
