@@ -1,8 +1,13 @@
 import flwr as fl
 
-# Start server for 3 rounds
+strategy = fl.server.strategy.FedAvg(
+    fraction_fit=1.0,
+    min_fit_clients=5,
+    min_available_clients=5
+)
+
 fl.server.start_server(
-    server_address="0.0.0.0:8080",
-    config=fl.server.ServerConfig(num_rounds=3),
-    #strategy=fl.server.strategy.FedMedian()
+    server_address="localhost:8080",
+    config=fl.server.ServerConfig(num_rounds=10),
+    strategy=strategy
 )

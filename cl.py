@@ -1,33 +1,28 @@
-import tensorflow as tf
 import flwr as fl
-model=tf.keras.applications.MobileNetV2(
-    input_shape=(32, 32, 3),
-    classes=10,
-    weights=None
-)
-model.compile("adam","sparse_categorical_crossentropy", metrics=["accuracy"])
-(x_train,y_train),(x_test,y_test)=tf.keras.datasets.cifar10.load_data()
+import tensorflow as tf
+from model import create_model
+from data_load import load_partition
+import sys
 
-model.fit(x_train,y_train, epochs=1, batch_size=32)
+client_id = int(sys.argv[1])
+NUM_CLIENTS = 5
 
-class FlowerClient(fl.client.NumPyClient):
+X_train, X_test, y_train, y_test = load_partition(client_id, NUM_CLIENTS)
 
+model = create_model(X_train.shape[1])
+
+class FraudClient(fl.client.NumPyClient):
     def get_parameters(self, config):
         return model.get_weights()
 
     def fit(self, parameters, config):
         model.set_weights(parameters)
-        model.fit(x_train,y_train, epochs=1, batch_size=32)
-        #loss, accuracy = model.evaluate(x_test,y_test)
-        return model.get_weights(), len(x_train), {} #Return empty dict for metrics
+        model.fit(X_train, y_train, epochs=3, batch_size=64, verbose=0)
+        return model.get_weights(), len(X_train), {}
 
     def evaluate(self, parameters, config):
         model.set_weights(parameters)
-        loss, accuracy = model.evaluate(x_test,y_test)
-        return loss, len(x_test), {"accuracy": accuracy}
-    
+        loss, acc, auc = model.evaluate(X_test, y_test, verbose=0)
+        return loss, len(X_test), {"accuracy": acc, "auc": auc}
 
-fl.client.start_numpy_client(
-    server_address="127.0.0.1:8080",
-    client=FlowerClient()
-)
+fl.client.start_numpy_client(server_address="localhost:8080", client=FraudClient())
