@@ -3,3 +3,7 @@ data/
 venv/
 __pycache__/
 *.pyc
+*.docx
+copies/
+btech/
+fl_env/
