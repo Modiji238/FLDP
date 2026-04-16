@@ -1,0 +1,2316 @@
+{
+  "config": {
+    "data_path": "creditcard.csv",
+    "split": "iid",
+    "dirichlet_alpha": 0.5,
+    "test_ratio": 0.2,
+    "num_clients": 5,
+    "num_rounds": 20,
+    "fraction_fit": 1.0,
+    "encoding_dim": 64,
+    "hidden_dims": [
+      128,
+      96
+    ],
+    "head_steps": 10,
+    "encoder_steps": 10,
+    "mu": 0.01,
+    "lr": 0.001,
+    "batch_size": 256,
+    "no_dp": false,
+    "clip_norm": 1.0,
+    "noise_mult": 1.1,
+    "delta": 1e-05,
+    "eval_every": 1,
+    "save_dir": "output",
+    "seed": 42,
+    "device": "auto"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.6781928658485412,
+          "encoder_loss": 0.5983514726161957
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.6925791919231414,
+          "encoder_loss": 0.6050743818283081
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.698509794473648,
+          "encoder_loss": 0.6144086241722106
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.6883339166641236,
+          "encoder_loss": 0.605670166015625
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.6662030041217804,
+          "encoder_loss": 0.5702249646186829
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9896,
+          "precision": 0.1273,
+          "recall": 0.8831,
+          "f1": 0.2226,
+          "tp": 68,
+          "fp": 466,
+          "fn": 9,
+          "tn": 45026
+        },
+        {
+          "accuracy": 0.0027,
+          "precision": 0.0017,
+          "recall": 1.0,
+          "f1": 0.0035,
+          "tp": 79,
+          "fp": 45446,
+          "fn": 0,
+          "tn": 44
+        },
+        {
+          "accuracy": 0.8601,
+          "precision": 0.0112,
+          "recall": 0.9474,
+          "f1": 0.0221,
+          "tp": 72,
+          "fp": 6372,
+          "fn": 4,
+          "tn": 39121
+        },
+        {
+          "accuracy": 0.9847,
+          "precision": 0.0999,
+          "recall": 0.8636,
+          "f1": 0.179,
+          "tp": 76,
+          "fp": 685,
+          "fn": 12,
+          "tn": 44796
+        },
+        {
+          "accuracy": 0.9858,
+          "precision": 0.097,
+          "recall": 0.9324,
+          "f1": 0.1758,
+          "tp": 69,
+          "fp": 642,
+          "fn": 5,
+          "tn": 44853
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9831,
+        "precision": 0.0837,
+        "recall": 0.8878,
+        "f1": 0.1529,
+        "tp": 87,
+        "fp": 953,
+        "fn": 11,
+        "tn": 55910
+      },
+      "privacy": {
+        "epsilon": 783.9948,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 1
+      },
+      "elapsed_s": 2.79
+    },
+    {
+      "round": 2,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.5759597599506379,
+          "encoder_loss": 0.4583341956138611
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.5866998732089996,
+          "encoder_loss": 0.46862034499645233
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.6062405467033386,
+          "encoder_loss": 0.4887212008237839
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.5815216422080993,
+          "encoder_loss": 0.4671073168516159
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.5435896039009094,
+          "encoder_loss": 0.41698227226734164
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.993,
+          "precision": 0.1774,
+          "recall": 0.8571,
+          "f1": 0.294,
+          "tp": 66,
+          "fp": 306,
+          "fn": 11,
+          "tn": 45186
+        },
+        {
+          "accuracy": 0.9889,
+          "precision": 0.1217,
+          "recall": 0.8734,
+          "f1": 0.2136,
+          "tp": 69,
+          "fp": 498,
+          "fn": 10,
+          "tn": 44992
+        },
+        {
+          "accuracy": 0.9879,
+          "precision": 0.1126,
+          "recall": 0.9079,
+          "f1": 0.2003,
+          "tp": 69,
+          "fp": 544,
+          "fn": 7,
+          "tn": 44949
+        },
+        {
+          "accuracy": 0.9906,
+          "precision": 0.1538,
+          "recall": 0.8636,
+          "f1": 0.2612,
+          "tp": 76,
+          "fp": 418,
+          "fn": 12,
+          "tn": 45063
+        },
+        {
+          "accuracy": 0.9933,
+          "precision": 0.1865,
+          "recall": 0.9324,
+          "f1": 0.3108,
+          "tp": 69,
+          "fp": 301,
+          "fn": 5,
+          "tn": 45194
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9788,
+        "precision": 0.0691,
+        "recall": 0.9082,
+        "f1": 0.1284,
+        "tp": 89,
+        "fp": 1199,
+        "fn": 9,
+        "tn": 55664
+      },
+      "privacy": {
+        "epsilon": 554.368,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 2
+      },
+      "elapsed_s": 1.67
+    },
+    {
+      "round": 3,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.3921758383512497,
+          "encoder_loss": 0.27343461364507676
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.4111698418855667,
+          "encoder_loss": 0.30564224272966384
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.4190619468688965,
+          "encoder_loss": 0.292571222782135
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.4084961414337158,
+          "encoder_loss": 0.29818183928728104
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.3424617499113083,
+          "encoder_loss": 0.2479712426662445
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9885,
+          "precision": 0.1197,
+          "recall": 0.9091,
+          "f1": 0.2115,
+          "tp": 70,
+          "fp": 515,
+          "fn": 7,
+          "tn": 44977
+        },
+        {
+          "accuracy": 0.9917,
+          "precision": 0.1579,
+          "recall": 0.8734,
+          "f1": 0.2674,
+          "tp": 69,
+          "fp": 368,
+          "fn": 10,
+          "tn": 45122
+        },
+        {
+          "accuracy": 0.9902,
+          "precision": 0.1367,
+          "recall": 0.9211,
+          "f1": 0.2381,
+          "tp": 70,
+          "fp": 442,
+          "fn": 6,
+          "tn": 45051
+        },
+        {
+          "accuracy": 0.9878,
+          "precision": 0.1266,
+          "recall": 0.8977,
+          "f1": 0.2219,
+          "tp": 79,
+          "fp": 545,
+          "fn": 9,
+          "tn": 44936
+        },
+        {
+          "accuracy": 0.9948,
+          "precision": 0.2308,
+          "recall": 0.9324,
+          "f1": 0.37,
+          "tp": 69,
+          "fp": 230,
+          "fn": 5,
+          "tn": 45265
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9783,
+        "precision": 0.0682,
+        "recall": 0.9184,
+        "f1": 0.127,
+        "tp": 90,
+        "fp": 1229,
+        "fn": 8,
+        "tn": 55634
+      },
+      "privacy": {
+        "epsilon": 452.6396,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 3
+      },
+      "elapsed_s": 1.67
+    },
+    {
+      "round": 4,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.21487204283475875,
+          "encoder_loss": 0.1522739753127098
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.23983250558376312,
+          "encoder_loss": 0.20688898712396622
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.2184423103928566,
+          "encoder_loss": 0.14903770983219147
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.24893201440572738,
+          "encoder_loss": 0.19837043136358262
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.1910806342959404,
+          "encoder_loss": 0.1616385668516159
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9882,
+          "precision": 0.1169,
+          "recall": 0.9091,
+          "f1": 0.2071,
+          "tp": 70,
+          "fp": 529,
+          "fn": 7,
+          "tn": 44963
+        },
+        {
+          "accuracy": 0.9909,
+          "precision": 0.1462,
+          "recall": 0.8734,
+          "f1": 0.2505,
+          "tp": 69,
+          "fp": 403,
+          "fn": 10,
+          "tn": 45087
+        },
+        {
+          "accuracy": 0.9912,
+          "precision": 0.1512,
+          "recall": 0.9211,
+          "f1": 0.2597,
+          "tp": 70,
+          "fp": 393,
+          "fn": 6,
+          "tn": 45100
+        },
+        {
+          "accuracy": 0.9829,
+          "precision": 0.0931,
+          "recall": 0.8977,
+          "f1": 0.1686,
+          "tp": 79,
+          "fp": 770,
+          "fn": 9,
+          "tn": 44711
+        },
+        {
+          "accuracy": 0.9962,
+          "precision": 0.2887,
+          "recall": 0.9324,
+          "f1": 0.4409,
+          "tp": 69,
+          "fp": 170,
+          "fn": 5,
+          "tn": 45325
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9751,
+        "precision": 0.06,
+        "recall": 0.9184,
+        "f1": 0.1127,
+        "tp": 90,
+        "fp": 1409,
+        "fn": 8,
+        "tn": 55454
+      },
+      "privacy": {
+        "epsilon": 391.9974,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 4
+      },
+      "elapsed_s": 1.67
+    },
+    {
+      "round": 5,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.1554199442267418,
+          "encoder_loss": 0.13383022099733352
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.20200686305761337,
+          "encoder_loss": 0.17814866304397584
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.14657107144594192,
+          "encoder_loss": 0.11333885714411736
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.20432483702898024,
+          "encoder_loss": 0.17359643876552583
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.12332561612129211,
+          "encoder_loss": 0.12244184762239456
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9872,
+          "precision": 0.1109,
+          "recall": 0.9351,
+          "f1": 0.1983,
+          "tp": 72,
+          "fp": 577,
+          "fn": 5,
+          "tn": 44915
+        },
+        {
+          "accuracy": 0.9893,
+          "precision": 0.1293,
+          "recall": 0.8987,
+          "f1": 0.2261,
+          "tp": 71,
+          "fp": 478,
+          "fn": 8,
+          "tn": 45012
+        },
+        {
+          "accuracy": 0.9863,
+          "precision": 0.1017,
+          "recall": 0.9211,
+          "f1": 0.1832,
+          "tp": 70,
+          "fp": 618,
+          "fn": 6,
+          "tn": 44875
+        },
+        {
+          "accuracy": 0.9792,
+          "precision": 0.0784,
+          "recall": 0.9091,
+          "f1": 0.1444,
+          "tp": 80,
+          "fp": 940,
+          "fn": 8,
+          "tn": 44541
+        },
+        {
+          "accuracy": 0.9937,
+          "precision": 0.1955,
+          "recall": 0.9324,
+          "f1": 0.3232,
+          "tp": 69,
+          "fp": 284,
+          "fn": 5,
+          "tn": 45211
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9725,
+        "precision": 0.0546,
+        "recall": 0.9184,
+        "f1": 0.1031,
+        "tp": 90,
+        "fp": 1558,
+        "fn": 8,
+        "tn": 55305
+      },
+      "privacy": {
+        "epsilon": 350.6131,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 5
+      },
+      "elapsed_s": 1.67
+    },
+    {
+      "round": 6,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.1187454804778099,
+          "encoder_loss": 0.10825901478528976
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.16979264467954636,
+          "encoder_loss": 0.1535581335425377
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.12663810700178146,
+          "encoder_loss": 0.11290462091565132
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.18245071172714233,
+          "encoder_loss": 0.16463777422904968
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.11191790923476219,
+          "encoder_loss": 0.09937028586864471
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9822,
+          "precision": 0.082,
+          "recall": 0.9351,
+          "f1": 0.1508,
+          "tp": 72,
+          "fp": 806,
+          "fn": 5,
+          "tn": 44686
+        },
+        {
+          "accuracy": 0.9829,
+          "precision": 0.0851,
+          "recall": 0.9114,
+          "f1": 0.1557,
+          "tp": 72,
+          "fp": 774,
+          "fn": 7,
+          "tn": 44716
+        },
+        {
+          "accuracy": 0.9893,
+          "precision": 0.1279,
+          "recall": 0.9342,
+          "f1": 0.225,
+          "tp": 71,
+          "fp": 484,
+          "fn": 5,
+          "tn": 45009
+        },
+        {
+          "accuracy": 0.9862,
+          "precision": 0.1144,
+          "recall": 0.9091,
+          "f1": 0.2033,
+          "tp": 80,
+          "fp": 619,
+          "fn": 8,
+          "tn": 44862
+        },
+        {
+          "accuracy": 0.9901,
+          "precision": 0.1342,
+          "recall": 0.9324,
+          "f1": 0.2347,
+          "tp": 69,
+          "fp": 445,
+          "fn": 5,
+          "tn": 45050
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9695,
+        "precision": 0.0489,
+        "recall": 0.9082,
+        "f1": 0.0928,
+        "tp": 89,
+        "fp": 1731,
+        "fn": 9,
+        "tn": 55132
+      },
+      "privacy": {
+        "epsilon": 320.0645,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 6
+      },
+      "elapsed_s": 1.72
+    },
+    {
+      "round": 7,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.11189563572406769,
+          "encoder_loss": 0.11610091775655747
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.14338738918304444,
+          "encoder_loss": 0.1507176011800766
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.1278399221599102,
+          "encoder_loss": 0.11400211229920387
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.17220167964696884,
+          "encoder_loss": 0.14514076858758926
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.12193633317947387,
+          "encoder_loss": 0.10450858920812607
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9836,
+          "precision": 0.0886,
+          "recall": 0.9351,
+          "f1": 0.1618,
+          "tp": 72,
+          "fp": 741,
+          "fn": 5,
+          "tn": 44751
+        },
+        {
+          "accuracy": 0.9887,
+          "precision": 0.1246,
+          "recall": 0.9114,
+          "f1": 0.2192,
+          "tp": 72,
+          "fp": 506,
+          "fn": 7,
+          "tn": 44984
+        },
+        {
+          "accuracy": 0.9856,
+          "precision": 0.0986,
+          "recall": 0.9342,
+          "f1": 0.1784,
+          "tp": 71,
+          "fp": 649,
+          "fn": 5,
+          "tn": 44844
+        },
+        {
+          "accuracy": 0.9787,
+          "precision": 0.0776,
+          "recall": 0.9205,
+          "f1": 0.1431,
+          "tp": 81,
+          "fp": 963,
+          "fn": 7,
+          "tn": 44518
+        },
+        {
+          "accuracy": 0.988,
+          "precision": 0.1146,
+          "recall": 0.9459,
+          "f1": 0.2044,
+          "tp": 70,
+          "fp": 541,
+          "fn": 4,
+          "tn": 44954
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9685,
+        "precision": 0.0484,
+        "recall": 0.9286,
+        "f1": 0.092,
+        "tp": 91,
+        "fp": 1789,
+        "fn": 7,
+        "tn": 55074
+      },
+      "privacy": {
+        "epsilon": 296.3222,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 7
+      },
+      "elapsed_s": 1.69
+    },
+    {
+      "round": 8,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.11929478570818901,
+          "encoder_loss": 0.09801725409924984
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.17802802920341493,
+          "encoder_loss": 0.16160653606057168
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.10953763350844384,
+          "encoder_loss": 0.10788154155015946
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.16671633422374726,
+          "encoder_loss": 0.16495892107486726
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.12279441878199578,
+          "encoder_loss": 0.09344362169504165
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.983,
+          "precision": 0.0877,
+          "recall": 0.961,
+          "f1": 0.1607,
+          "tp": 74,
+          "fp": 770,
+          "fn": 3,
+          "tn": 44722
+        },
+        {
+          "accuracy": 0.9887,
+          "precision": 0.1239,
+          "recall": 0.9114,
+          "f1": 0.2182,
+          "tp": 72,
+          "fp": 509,
+          "fn": 7,
+          "tn": 44981
+        },
+        {
+          "accuracy": 0.9852,
+          "precision": 0.0969,
+          "recall": 0.9474,
+          "f1": 0.1758,
+          "tp": 72,
+          "fp": 671,
+          "fn": 4,
+          "tn": 44822
+        },
+        {
+          "accuracy": 0.9852,
+          "precision": 0.1084,
+          "recall": 0.9205,
+          "f1": 0.194,
+          "tp": 81,
+          "fp": 666,
+          "fn": 7,
+          "tn": 44815
+        },
+        {
+          "accuracy": 0.9847,
+          "precision": 0.094,
+          "recall": 0.973,
+          "f1": 0.1714,
+          "tp": 72,
+          "fp": 694,
+          "fn": 2,
+          "tn": 44801
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9654,
+        "precision": 0.0442,
+        "recall": 0.9286,
+        "f1": 0.0845,
+        "tp": 91,
+        "fp": 1966,
+        "fn": 7,
+        "tn": 54897
+      },
+      "privacy": {
+        "epsilon": 277.184,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 8
+      },
+      "elapsed_s": 1.7
+    },
+    {
+      "round": 9,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.12143287509679794,
+          "encoder_loss": 0.10783011242747306
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.16699488833546638,
+          "encoder_loss": 0.16899286061525345
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.12618936747312545,
+          "encoder_loss": 0.12374820113182068
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.17617836892604827,
+          "encoder_loss": 0.1653169497847557
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.10032555088400841,
+          "encoder_loss": 0.08836780786514283
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.981,
+          "precision": 0.0791,
+          "recall": 0.961,
+          "f1": 0.1461,
+          "tp": 74,
+          "fp": 862,
+          "fn": 3,
+          "tn": 44630
+        },
+        {
+          "accuracy": 0.9854,
+          "precision": 0.0997,
+          "recall": 0.9241,
+          "f1": 0.18,
+          "tp": 73,
+          "fp": 659,
+          "fn": 6,
+          "tn": 44831
+        },
+        {
+          "accuracy": 0.9872,
+          "precision": 0.1106,
+          "recall": 0.9474,
+          "f1": 0.1981,
+          "tp": 72,
+          "fp": 579,
+          "fn": 4,
+          "tn": 44914
+        },
+        {
+          "accuracy": 0.986,
+          "precision": 0.1134,
+          "recall": 0.9205,
+          "f1": 0.202,
+          "tp": 81,
+          "fp": 633,
+          "fn": 7,
+          "tn": 44848
+        },
+        {
+          "accuracy": 0.9876,
+          "precision": 0.1136,
+          "recall": 0.973,
+          "f1": 0.2034,
+          "tp": 72,
+          "fp": 562,
+          "fn": 2,
+          "tn": 44933
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9679,
+        "precision": 0.0476,
+        "recall": 0.9286,
+        "f1": 0.0905,
+        "tp": 91,
+        "fp": 1822,
+        "fn": 7,
+        "tn": 55041
+      },
+      "privacy": {
+        "epsilon": 261.3316,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 9
+      },
+      "elapsed_s": 1.69
+    },
+    {
+      "round": 10,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.10003847926855088,
+          "encoder_loss": 0.11707289293408393
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.15705640837550164,
+          "encoder_loss": 0.1448853723704815
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.1117228277027607,
+          "encoder_loss": 0.10806538313627242
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.15083664283156395,
+          "encoder_loss": 0.1362582713365555
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.09545311033725738,
+          "encoder_loss": 0.08115256652235985
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9879,
+          "precision": 0.1165,
+          "recall": 0.9351,
+          "f1": 0.2072,
+          "tp": 72,
+          "fp": 546,
+          "fn": 5,
+          "tn": 44946
+        },
+        {
+          "accuracy": 0.9901,
+          "precision": 0.1412,
+          "recall": 0.9241,
+          "f1": 0.245,
+          "tp": 73,
+          "fp": 444,
+          "fn": 6,
+          "tn": 45046
+        },
+        {
+          "accuracy": 0.9896,
+          "precision": 0.132,
+          "recall": 0.9342,
+          "f1": 0.2313,
+          "tp": 71,
+          "fp": 467,
+          "fn": 5,
+          "tn": 45026
+        },
+        {
+          "accuracy": 0.9861,
+          "precision": 0.1146,
+          "recall": 0.9205,
+          "f1": 0.2038,
+          "tp": 81,
+          "fp": 626,
+          "fn": 7,
+          "tn": 44855
+        },
+        {
+          "accuracy": 0.9808,
+          "precision": 0.0763,
+          "recall": 0.973,
+          "f1": 0.1415,
+          "tp": 72,
+          "fp": 872,
+          "fn": 2,
+          "tn": 44623
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9696,
+        "precision": 0.0502,
+        "recall": 0.9286,
+        "f1": 0.0952,
+        "tp": 91,
+        "fp": 1722,
+        "fn": 7,
+        "tn": 55141
+      },
+      "privacy": {
+        "epsilon": 247.9209,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 10
+      },
+      "elapsed_s": 1.71
+    },
+    {
+      "round": 11,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.11455688625574112,
+          "encoder_loss": 0.09273249544203281
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.14908063933253288,
+          "encoder_loss": 0.14520924240350724
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.11823670268058777,
+          "encoder_loss": 0.09206300377845764
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.1697310023009777,
+          "encoder_loss": 0.14503042548894882
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.09154333546757698,
+          "encoder_loss": 0.070784055814147
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9839,
+          "precision": 0.0922,
+          "recall": 0.961,
+          "f1": 0.1682,
+          "tp": 74,
+          "fp": 729,
+          "fn": 3,
+          "tn": 44763
+        },
+        {
+          "accuracy": 0.9872,
+          "precision": 0.1133,
+          "recall": 0.9367,
+          "f1": 0.2022,
+          "tp": 74,
+          "fp": 579,
+          "fn": 5,
+          "tn": 44911
+        },
+        {
+          "accuracy": 0.9867,
+          "precision": 0.1068,
+          "recall": 0.9474,
+          "f1": 0.192,
+          "tp": 72,
+          "fp": 602,
+          "fn": 4,
+          "tn": 44891
+        },
+        {
+          "accuracy": 0.9805,
+          "precision": 0.0851,
+          "recall": 0.9318,
+          "f1": 0.1559,
+          "tp": 82,
+          "fp": 882,
+          "fn": 6,
+          "tn": 44599
+        },
+        {
+          "accuracy": 0.9881,
+          "precision": 0.1175,
+          "recall": 0.973,
+          "f1": 0.2096,
+          "tp": 72,
+          "fp": 541,
+          "fn": 2,
+          "tn": 44954
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9735,
+        "precision": 0.056,
+        "recall": 0.9082,
+        "f1": 0.1055,
+        "tp": 89,
+        "fp": 1501,
+        "fn": 9,
+        "tn": 55362
+      },
+      "privacy": {
+        "epsilon": 236.3833,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 11
+      },
+      "elapsed_s": 1.98
+    },
+    {
+      "round": 12,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.0943394996225834,
+          "encoder_loss": 0.09345399029552937
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.15472420528531075,
+          "encoder_loss": 0.15097698867321013
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.09554574862122536,
+          "encoder_loss": 0.09886752888560295
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.15114161297678946,
+          "encoder_loss": 0.11920496597886085
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.08824114352464676,
+          "encoder_loss": 0.07976274937391281
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9848,
+          "precision": 0.0969,
+          "recall": 0.961,
+          "f1": 0.176,
+          "tp": 74,
+          "fp": 690,
+          "fn": 3,
+          "tn": 44802
+        },
+        {
+          "accuracy": 0.9898,
+          "precision": 0.1372,
+          "recall": 0.9241,
+          "f1": 0.239,
+          "tp": 73,
+          "fp": 459,
+          "fn": 6,
+          "tn": 45031
+        },
+        {
+          "accuracy": 0.9891,
+          "precision": 0.1274,
+          "recall": 0.9474,
+          "f1": 0.2246,
+          "tp": 72,
+          "fp": 493,
+          "fn": 4,
+          "tn": 45000
+        },
+        {
+          "accuracy": 0.9795,
+          "precision": 0.0813,
+          "recall": 0.9318,
+          "f1": 0.1495,
+          "tp": 82,
+          "fp": 927,
+          "fn": 6,
+          "tn": 44554
+        },
+        {
+          "accuracy": 0.9871,
+          "precision": 0.1109,
+          "recall": 0.9865,
+          "f1": 0.1995,
+          "tp": 73,
+          "fp": 585,
+          "fn": 1,
+          "tn": 44910
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9723,
+        "precision": 0.0549,
+        "recall": 0.9286,
+        "f1": 0.1036,
+        "tp": 91,
+        "fp": 1568,
+        "fn": 7,
+        "tn": 55295
+      },
+      "privacy": {
+        "epsilon": 226.3198,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 12
+      },
+      "elapsed_s": 1.98
+    },
+    {
+      "round": 13,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.10479741357266903,
+          "encoder_loss": 0.09195302091538907
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.15683294087648392,
+          "encoder_loss": 0.1490313820540905
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.10507125966250896,
+          "encoder_loss": 0.10264311842620373
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.14888326525688172,
+          "encoder_loss": 0.13586014434695243
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.09788577035069465,
+          "encoder_loss": 0.06537563242018223
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9832,
+          "precision": 0.0886,
+          "recall": 0.961,
+          "f1": 0.1623,
+          "tp": 74,
+          "fp": 761,
+          "fn": 3,
+          "tn": 44731
+        },
+        {
+          "accuracy": 0.9884,
+          "precision": 0.1254,
+          "recall": 0.9494,
+          "f1": 0.2216,
+          "tp": 75,
+          "fp": 523,
+          "fn": 4,
+          "tn": 44967
+        },
+        {
+          "accuracy": 0.9889,
+          "precision": 0.1254,
+          "recall": 0.9474,
+          "f1": 0.2215,
+          "tp": 72,
+          "fp": 502,
+          "fn": 4,
+          "tn": 44991
+        },
+        {
+          "accuracy": 0.9844,
+          "precision": 0.1029,
+          "recall": 0.9205,
+          "f1": 0.1851,
+          "tp": 81,
+          "fp": 706,
+          "fn": 7,
+          "tn": 44775
+        },
+        {
+          "accuracy": 0.9878,
+          "precision": 0.1159,
+          "recall": 0.9865,
+          "f1": 0.2074,
+          "tp": 73,
+          "fp": 557,
+          "fn": 1,
+          "tn": 44938
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9714,
+        "precision": 0.0531,
+        "recall": 0.9286,
+        "f1": 0.1004,
+        "tp": 91,
+        "fp": 1624,
+        "fn": 7,
+        "tn": 55239
+      },
+      "privacy": {
+        "epsilon": 217.441,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 13
+      },
+      "elapsed_s": 1.89
+    },
+    {
+      "round": 14,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.09992311075329781,
+          "encoder_loss": 0.07375265136361123
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.151788579672575,
+          "encoder_loss": 0.14201094284653665
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.11168721988797188,
+          "encoder_loss": 0.0974373146891594
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.14262056797742845,
+          "encoder_loss": 0.14512419253587722
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.07499693594872951,
+          "encoder_loss": 0.0805308897048235
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9828,
+          "precision": 0.0884,
+          "recall": 0.987,
+          "f1": 0.1622,
+          "tp": 76,
+          "fp": 784,
+          "fn": 1,
+          "tn": 44708
+        },
+        {
+          "accuracy": 0.9863,
+          "precision": 0.1081,
+          "recall": 0.9494,
+          "f1": 0.194,
+          "tp": 75,
+          "fp": 619,
+          "fn": 4,
+          "tn": 44871
+        },
+        {
+          "accuracy": 0.9899,
+          "precision": 0.138,
+          "recall": 0.9605,
+          "f1": 0.2413,
+          "tp": 73,
+          "fp": 456,
+          "fn": 3,
+          "tn": 45037
+        },
+        {
+          "accuracy": 0.9898,
+          "precision": 0.1519,
+          "recall": 0.9318,
+          "f1": 0.2611,
+          "tp": 82,
+          "fp": 458,
+          "fn": 6,
+          "tn": 45023
+        },
+        {
+          "accuracy": 0.9919,
+          "precision": 0.1655,
+          "recall": 0.9865,
+          "f1": 0.2835,
+          "tp": 73,
+          "fp": 368,
+          "fn": 1,
+          "tn": 45127
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9729,
+        "precision": 0.056,
+        "recall": 0.9286,
+        "f1": 0.1056,
+        "tp": 91,
+        "fp": 1535,
+        "fn": 7,
+        "tn": 55328
+      },
+      "privacy": {
+        "epsilon": 209.5314,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 14
+      },
+      "elapsed_s": 1.91
+    },
+    {
+      "round": 15,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.08604631386697292,
+          "encoder_loss": 0.08582203686237336
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.14197429567575454,
+          "encoder_loss": 0.1419636458158493
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.10470503941178322,
+          "encoder_loss": 0.08737760335206986
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.15008785128593444,
+          "encoder_loss": 0.13162306994199752
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.0740361139178276,
+          "encoder_loss": 0.06593702808022499
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9873,
+          "precision": 0.116,
+          "recall": 0.987,
+          "f1": 0.2077,
+          "tp": 76,
+          "fp": 579,
+          "fn": 1,
+          "tn": 44913
+        },
+        {
+          "accuracy": 0.9882,
+          "precision": 0.123,
+          "recall": 0.9494,
+          "f1": 0.2177,
+          "tp": 75,
+          "fp": 535,
+          "fn": 4,
+          "tn": 44955
+        },
+        {
+          "accuracy": 0.9892,
+          "precision": 0.1281,
+          "recall": 0.9474,
+          "f1": 0.2257,
+          "tp": 72,
+          "fp": 490,
+          "fn": 4,
+          "tn": 45003
+        },
+        {
+          "accuracy": 0.984,
+          "precision": 0.1027,
+          "recall": 0.9432,
+          "f1": 0.1853,
+          "tp": 83,
+          "fp": 725,
+          "fn": 5,
+          "tn": 44756
+        },
+        {
+          "accuracy": 0.9905,
+          "precision": 0.146,
+          "recall": 1.0,
+          "f1": 0.2547,
+          "tp": 74,
+          "fp": 433,
+          "fn": 0,
+          "tn": 45062
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9754,
+        "precision": 0.0606,
+        "recall": 0.9184,
+        "f1": 0.1138,
+        "tp": 90,
+        "fp": 1394,
+        "fn": 8,
+        "tn": 55469
+      },
+      "privacy": {
+        "epsilon": 202.4266,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 15
+      },
+      "elapsed_s": 1.96
+    },
+    {
+      "round": 16,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.08227128237485885,
+          "encoder_loss": 0.07717712968587875
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.13104133307933807,
+          "encoder_loss": 0.14357377961277962
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.08343336544930935,
+          "encoder_loss": 0.08410209901630879
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.13567099943757058,
+          "encoder_loss": 0.11889696419239044
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.08001830354332924,
+          "encoder_loss": 0.061463897302746776
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9857,
+          "precision": 0.1048,
+          "recall": 0.987,
+          "f1": 0.1895,
+          "tp": 76,
+          "fp": 649,
+          "fn": 1,
+          "tn": 44843
+        },
+        {
+          "accuracy": 0.9926,
+          "precision": 0.1827,
+          "recall": 0.9367,
+          "f1": 0.3058,
+          "tp": 74,
+          "fp": 331,
+          "fn": 5,
+          "tn": 45159
+        },
+        {
+          "accuracy": 0.9873,
+          "precision": 0.1137,
+          "recall": 0.9737,
+          "f1": 0.2036,
+          "tp": 74,
+          "fp": 577,
+          "fn": 2,
+          "tn": 44916
+        },
+        {
+          "accuracy": 0.9837,
+          "precision": 0.1032,
+          "recall": 0.9659,
+          "f1": 0.1864,
+          "tp": 85,
+          "fp": 739,
+          "fn": 3,
+          "tn": 44742
+        },
+        {
+          "accuracy": 0.9928,
+          "precision": 0.1834,
+          "recall": 0.9865,
+          "f1": 0.3093,
+          "tp": 73,
+          "fp": 325,
+          "fn": 1,
+          "tn": 45170
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9724,
+        "precision": 0.055,
+        "recall": 0.9286,
+        "f1": 0.1038,
+        "tp": 91,
+        "fp": 1564,
+        "fn": 7,
+        "tn": 55299
+      },
+      "privacy": {
+        "epsilon": 195.9987,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 16
+      },
+      "elapsed_s": 2.04
+    },
+    {
+      "round": 17,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.08921927213668823,
+          "encoder_loss": 0.08396764993667602
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.12393317744135857,
+          "encoder_loss": 0.13525276780128478
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.08997008726000785,
+          "encoder_loss": 0.09622075408697128
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.12785031497478486,
+          "encoder_loss": 0.11946760937571525
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.06512990184128284,
+          "encoder_loss": 0.06318624168634415
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9867,
+          "precision": 0.1113,
+          "recall": 0.987,
+          "f1": 0.2,
+          "tp": 76,
+          "fp": 607,
+          "fn": 1,
+          "tn": 44885
+        },
+        {
+          "accuracy": 0.9912,
+          "precision": 0.1589,
+          "recall": 0.9494,
+          "f1": 0.2722,
+          "tp": 75,
+          "fp": 397,
+          "fn": 4,
+          "tn": 45093
+        },
+        {
+          "accuracy": 0.9889,
+          "precision": 0.1267,
+          "recall": 0.9605,
+          "f1": 0.2239,
+          "tp": 73,
+          "fp": 503,
+          "fn": 3,
+          "tn": 44990
+        },
+        {
+          "accuracy": 0.9878,
+          "precision": 0.1321,
+          "recall": 0.9545,
+          "f1": 0.232,
+          "tp": 84,
+          "fp": 552,
+          "fn": 4,
+          "tn": 44929
+        },
+        {
+          "accuracy": 0.9898,
+          "precision": 0.1375,
+          "recall": 1.0,
+          "f1": 0.2418,
+          "tp": 74,
+          "fp": 464,
+          "fn": 0,
+          "tn": 45031
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9787,
+        "precision": 0.0689,
+        "recall": 0.9082,
+        "f1": 0.1281,
+        "tp": 89,
+        "fp": 1203,
+        "fn": 9,
+        "tn": 55660
+      },
+      "privacy": {
+        "epsilon": 190.1467,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 17
+      },
+      "elapsed_s": 1.99
+    },
+    {
+      "round": 18,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.07334559373557567,
+          "encoder_loss": 0.07547599077224731
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.11971620693802834,
+          "encoder_loss": 0.12342206612229348
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.0793873779475689,
+          "encoder_loss": 0.07870703004300594
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.1319180130958557,
+          "encoder_loss": 0.12377742752432823
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.06886253878474236,
+          "encoder_loss": 0.05361957177519798
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9855,
+          "precision": 0.1046,
+          "recall": 1.0,
+          "f1": 0.1894,
+          "tp": 77,
+          "fp": 659,
+          "fn": 0,
+          "tn": 44833
+        },
+        {
+          "accuracy": 0.9897,
+          "precision": 0.1384,
+          "recall": 0.9494,
+          "f1": 0.2415,
+          "tp": 75,
+          "fp": 467,
+          "fn": 4,
+          "tn": 45023
+        },
+        {
+          "accuracy": 0.9852,
+          "precision": 0.0992,
+          "recall": 0.9737,
+          "f1": 0.18,
+          "tp": 74,
+          "fp": 672,
+          "fn": 2,
+          "tn": 44821
+        },
+        {
+          "accuracy": 0.9914,
+          "precision": 0.1734,
+          "recall": 0.9205,
+          "f1": 0.2919,
+          "tp": 81,
+          "fp": 386,
+          "fn": 7,
+          "tn": 45095
+        },
+        {
+          "accuracy": 0.9942,
+          "precision": 0.2183,
+          "recall": 1.0,
+          "f1": 0.3584,
+          "tp": 74,
+          "fp": 265,
+          "fn": 0,
+          "tn": 45230
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9751,
+        "precision": 0.0606,
+        "recall": 0.9286,
+        "f1": 0.1138,
+        "tp": 91,
+        "fp": 1410,
+        "fn": 7,
+        "tn": 55453
+      },
+      "privacy": {
+        "epsilon": 184.7893,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 18
+      },
+      "elapsed_s": 1.97
+    },
+    {
+      "round": 19,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.10658978074789047,
+          "encoder_loss": 0.08901059217751026
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.137015188485384,
+          "encoder_loss": 0.12631430178880693
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.08124565072357655,
+          "encoder_loss": 0.07555676735937596
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.12833210676908494,
+          "encoder_loss": 0.11892396733164787
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.0542925801128149,
+          "encoder_loss": 0.03813215885311365
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9884,
+          "precision": 0.1256,
+          "recall": 0.987,
+          "f1": 0.2229,
+          "tp": 76,
+          "fp": 529,
+          "fn": 1,
+          "tn": 44963
+        },
+        {
+          "accuracy": 0.9911,
+          "precision": 0.1572,
+          "recall": 0.9494,
+          "f1": 0.2698,
+          "tp": 75,
+          "fp": 402,
+          "fn": 4,
+          "tn": 45088
+        },
+        {
+          "accuracy": 0.9922,
+          "precision": 0.1725,
+          "recall": 0.9737,
+          "f1": 0.2931,
+          "tp": 74,
+          "fp": 355,
+          "fn": 2,
+          "tn": 45138
+        },
+        {
+          "accuracy": 0.988,
+          "precision": 0.134,
+          "recall": 0.9545,
+          "f1": 0.235,
+          "tp": 84,
+          "fp": 543,
+          "fn": 4,
+          "tn": 44938
+        },
+        {
+          "accuracy": 0.991,
+          "precision": 0.1532,
+          "recall": 1.0,
+          "f1": 0.2657,
+          "tp": 74,
+          "fp": 409,
+          "fn": 0,
+          "tn": 45086
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9738,
+        "precision": 0.0577,
+        "recall": 0.9286,
+        "f1": 0.1086,
+        "tp": 91,
+        "fp": 1487,
+        "fn": 7,
+        "tn": 55376
+      },
+      "privacy": {
+        "epsilon": 179.8607,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 19
+      },
+      "elapsed_s": 2.01
+    },
+    {
+      "round": 20,
+      "train_metrics": [
+        {
+          "client_id": 0,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016897452296689153,
+          "head_loss": 0.0739423256367445,
+          "encoder_loss": 0.07978493757545949
+        },
+        {
+          "client_id": 1,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0017336347373202443,
+          "head_loss": 0.12657179385423661,
+          "encoder_loss": 0.12509142830967904
+        },
+        {
+          "client_id": 2,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016678004758432508,
+          "head_loss": 0.07529170215129852,
+          "encoder_loss": 0.07891167849302291
+        },
+        {
+          "client_id": 3,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0019311374053359032,
+          "head_loss": 0.1282952457666397,
+          "encoder_loss": 0.12020410224795341
+        },
+        {
+          "client_id": 4,
+          "n_samples": 45569,
+          "fraud_ratio": 0.0016239109681919217,
+          "head_loss": 0.056296442076563834,
+          "encoder_loss": 0.05348092056810856
+        }
+      ],
+      "eval_metrics": [
+        {
+          "accuracy": 0.9892,
+          "precision": 0.1358,
+          "recall": 1.0,
+          "f1": 0.2391,
+          "tp": 77,
+          "fp": 490,
+          "fn": 0,
+          "tn": 45002
+        },
+        {
+          "accuracy": 0.9905,
+          "precision": 0.1488,
+          "recall": 0.9494,
+          "f1": 0.2573,
+          "tp": 75,
+          "fp": 429,
+          "fn": 4,
+          "tn": 45061
+        },
+        {
+          "accuracy": 0.9882,
+          "precision": 0.1217,
+          "recall": 0.9737,
+          "f1": 0.2164,
+          "tp": 74,
+          "fp": 534,
+          "fn": 2,
+          "tn": 44959
+        },
+        {
+          "accuracy": 0.9876,
+          "precision": 0.1312,
+          "recall": 0.9659,
+          "f1": 0.231,
+          "tp": 85,
+          "fp": 563,
+          "fn": 3,
+          "tn": 44918
+        },
+        {
+          "accuracy": 0.9945,
+          "precision": 0.2277,
+          "recall": 1.0,
+          "f1": 0.3709,
+          "tp": 74,
+          "fp": 251,
+          "fn": 0,
+          "tn": 45244
+        }
+      ],
+      "global_metrics": {
+        "tag": "global_encoder_probe",
+        "accuracy": 0.9801,
+        "precision": 0.0718,
+        "recall": 0.8878,
+        "f1": 0.1329,
+        "tp": 87,
+        "fp": 1124,
+        "fn": 11,
+        "tn": 55739
+      },
+      "privacy": {
+        "epsilon": 175.3066,
+        "delta": 1e-05,
+        "clip_norm": 1.0,
+        "noise_multiplier": 1.1,
+        "rounds": 20
+      },
+      "elapsed_s": 1.95
+    }
+  ],
+  "final": {
+    "global": {
+      "tag": "global_encoder_probe",
+      "accuracy": 0.9774,
+      "precision": 0.0657,
+      "recall": 0.9184,
+      "f1": 0.1227,
+      "tp": 90,
+      "fp": 1279,
+      "fn": 8,
+      "tn": 55584
+    },
+    "clients": [
+      {
+        "accuracy": 0.9894,
+        "precision": 0.1346,
+        "recall": 0.974,
+        "f1": 0.2366,
+        "tp": 75,
+        "fp": 482,
+        "fn": 2,
+        "tn": 45010
+      },
+      {
+        "accuracy": 0.9907,
+        "precision": 0.1504,
+        "recall": 0.9367,
+        "f1": 0.2592,
+        "tp": 74,
+        "fp": 418,
+        "fn": 5,
+        "tn": 45072
+      },
+      {
+        "accuracy": 0.9904,
+        "precision": 0.1437,
+        "recall": 0.9605,
+        "f1": 0.25,
+        "tp": 73,
+        "fp": 435,
+        "fn": 3,
+        "tn": 45058
+      },
+      {
+        "accuracy": 0.9927,
+        "precision": 0.201,
+        "recall": 0.9318,
+        "f1": 0.3306,
+        "tp": 82,
+        "fp": 326,
+        "fn": 6,
+        "tn": 45155
+      },
+      {
+        "accuracy": 0.9905,
+        "precision": 0.1462,
+        "recall": 1.0,
+        "f1": 0.2552,
+        "tp": 74,
+        "fp": 432,
+        "fn": 0,
+        "tn": 45063
+      }
+    ]
+  }
+}
